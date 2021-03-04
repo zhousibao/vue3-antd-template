@@ -24,18 +24,17 @@
       </a-breadcrumb>
     </div>
     <div class="right-options">
+      
       <!-- 切换全屏 -->
       <component :is="fullscreenIcon" @click="toggleFullScreen" />
+
+      <div>{{ userNname }}</div>
       <Dropdown>
-        <a-avatar>{{ username }}</a-avatar>
+        <a-avatar src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"/>
         <template v-slot:overlay>
           <a-menu>
             <a-menu-item>
-              <a href="javascript:;">个人中心</a>
-            </a-menu-item>
-            <a-menu-divider/>
-            <a-menu-item>
-              <a @click.prevent="doLogout"><poweroff-outlined /> 退出登录</a>
+              <a @click.prevent="logout"><poweroff-outlined /> 退出登录</a>
             </a-menu-item>
           </a-menu>
         </template>
@@ -47,12 +46,10 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs, createVNode } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import components from "@/layout/header/components";
 import { message, Modal } from 'ant-design-vue'
 import { QuestionCircleOutlined } from '@ant-design/icons-vue'
+import components from "@/layout/header/components";
 import { useStore } from '@/store'
-import { TABS_ROUTES } from "@/store/mutation-types";
-import { UserActionTypes } from "@/store/modules/user/actions";
 
 export default defineComponent({
   name: "PageHeader",
@@ -66,7 +63,7 @@ export default defineComponent({
     const store = useStore()
 
     const state = reactive({
-      username: store.getters.userInfo.username,
+      userNname: store.getters.userName,
       fullscreenIcon: 'FullscreenOutlined',
     })
 
@@ -76,24 +73,13 @@ export default defineComponent({
     console.log(router.getRoutes(), 'currentRoute')
 
     // 退出登录
-    const doLogout = () => {
+    const logout = () => {
       Modal.confirm({
         title: '您确定要退出登录吗？',
         icon: createVNode(QuestionCircleOutlined),
         onOk: () => {
-          console.log(router, '退出登录')
-          // logout({})
-          store.dispatch(UserActionTypes.Logout).then(() => {
-            message.success('成功退出登录')
-            // 移除标签页
-            localStorage.removeItem(TABS_ROUTES)
-            router.replace({
-              name: 'login',
-              query: {
-                redirect: route.fullPath,
-              },
-            }).finally(() => location.reload())
-          })
+          message.success('成功退出登录')
+          router.push('./login')
         },
       })
     }
@@ -118,7 +104,7 @@ export default defineComponent({
     return {
       ...toRefs(state),
       toggleFullScreen,
-      doLogout,
+      logout,
       route,
     }
   },

@@ -1,4 +1,4 @@
-import {onUnmounted} from 'vue'
+import { onUnmounted } from 'vue'
 import mitt from 'mitt';
 
 const emitter: mitt.Emitter = mitt();
@@ -39,6 +39,6 @@ export const useEventbus = () => {
     })
     return {
         customEmit, customOn,
-        toRefreshTable, refreshTable, toRefreshTree, refreshTree
+        toRefreshTable, refreshTable, toRefreshTree, refreshTree,
     }
 }

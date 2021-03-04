@@ -1,5 +1,5 @@
-import {ref} from "vue"
-import {PaginationProps} from 'ant-design-vue/lib/pagination/Pagination'
+import { ref } from "vue"
+import { PaginationProps } from 'ant-design-vue/lib/pagination/Pagination'
 
 export interface PageOption extends Partial<typeof PaginationProps>{
     current?: number;
@@ -27,7 +27,7 @@ export function usePages(pageOptions?: PageOption) {
         showTotal: total => `共 ${total} 条`, // 显示总数
         onChange: (current, pageSize) => pageOptions?.pageChange?.(current, pageSize),
         onShowSizeChange: (current, pageSize) => pageOptions?.pageChange?.(current, pageSize),
-        ...pageOptions
+        ...pageOptions,
     })
 
     // 提供给ant-pagination组件的参数
@@ -44,6 +44,6 @@ export function usePages(pageOptions?: PageOption) {
 
     return {
         pageOption,
-        updatePageOption
+        updatePageOption,
     }
 }

@@ -1,13 +1,13 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import { App } from "vue";
 import { createRouterGuards } from './routerGuards' // 路由守卫
 
 // 菜单模块路由
-import common from "@/router/common";
+import common from "./common";
 // 非登录路由
-import shared from './modules/shared'
+import shared from './shared'
 // 错误 404 路由
-import { errorRoutes, notFound } from './modules/error'
+import { errorRoutes, notFound } from './error'
 
 export const routes: Array<RouteRecordRaw> = [
     {
@@ -30,7 +30,7 @@ export const routes: Array<RouteRecordRaw> = [
 //
 const router = createRouter({
     // process.env.BASE_URL
-    history: createWebHashHistory(''),
+    history: createWebHistory(''),
     routes,
 })
 

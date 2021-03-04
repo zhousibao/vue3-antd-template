@@ -57,3 +57,12 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+//
+$page-margin: 15px;
+.container {
+  margin: $page-margin;
+  border-radius: 3px;
+  background: #fff;
+  min-height: calc(100vh - #{$header-height} - #{2 * $page-margin});
+}

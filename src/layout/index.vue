@@ -7,7 +7,6 @@
 
     <a-layout>
       <page-header v-model:collapsed="collapsed"/>
-
       <a-layout-content class="layout-content">
         <!-- 路由 -->
         <router-transition/>
@@ -55,16 +54,12 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .layout {
-  display: flex;
   overflow: hidden;
   height: 100vh;
 
-  .ant-layout {
-    overflow: hidden;
-  }
-
   .layout-content {
-    flex: none;
+    height: auto;
+    overflow: auto;
   }
 }
 </style>

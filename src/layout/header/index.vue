@@ -122,6 +122,7 @@ export default defineComponent({
   background-color: #fff;
   padding: 0;
   height: $header-height;
+  box-shadow: 0 1px 4px rgba(79, 87, 95, 0.28);
 
   .left-options {
     display: flex;

@@ -1,6 +1,8 @@
 <template>
-  <div>
-   首页
+  <div class="container">
+    <div>
+      首页
+    </div>
   </div>
 </template>
 

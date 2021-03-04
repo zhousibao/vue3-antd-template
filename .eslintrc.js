@@ -21,6 +21,7 @@ module.exports = {
     "@typescript-eslint/ban-ts-ignore": "off",
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    '@typescript-eslint/interface-name-prefix': 'off',
     'no-plusplus': 0,
     'no-multiple-empty-lines': [2, { max: 2 }], // 空行最多不能超过2行
     eqeqeq: [2, 'allow-null'], // 使用 === 替代 ==

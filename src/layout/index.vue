@@ -1,6 +1,11 @@
 <template>
   <a-layout class="layout">
-    <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
+    <a-layout-sider 
+      v-model:collapsed="collapsed" 
+      :trigger="null" 
+      collapsible 
+      :width="asiderWidth"
+    >
       <logo :collapsed="collapsed"/>
       <aside-menu :collapsed="collapsed"/>
     </a-layout-sider>
@@ -17,8 +22,8 @@
 </template>
 
 <script lang="ts">
-import  { defineComponent, ref, h, computed } from 'vue'
-import { Layout, message } from 'ant-design-vue'
+import  { defineComponent, ref, computed } from 'vue'
+import { Layout } from 'ant-design-vue'
 import Logo from './logo/index.vue'
 import AsideMenu from './menu/index.vue'
 import PageHeader from './header/index.vue'
@@ -36,15 +41,10 @@ export default defineComponent({
   setup() {
     const collapsed = ref<boolean>(false)
 
-    const testMsg = () => {
-      message.success(h('span', '啥子'), 2)
-    }
-
-    const asiderWidth = computed(() => collapsed.value ? '80px' : '256px')
+    const asiderWidth = computed(() => collapsed.value ? '70px' : '248px')
 
     return {
       collapsed,
-      testMsg,
       asiderWidth,
     }
   },

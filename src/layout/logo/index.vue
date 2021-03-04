@@ -26,7 +26,7 @@ export default defineComponent({
 .logo {
   display: flex;
   align-items: center;
-  margin: 0 20px;
+  margin: 0 15px;
   height: $header-height;
   line-height: $header-height;
   overflow: hidden;

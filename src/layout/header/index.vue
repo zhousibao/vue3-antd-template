@@ -83,7 +83,7 @@ export default defineComponent({
         onOk: () => {
           console.log(router, '退出登录')
           // logout({})
-          store.dispatch(UserActionTypes.Logout).then(res => {
+          store.dispatch(UserActionTypes.Logout).then(() => {
             message.success('成功退出登录')
             // 移除标签页
             localStorage.removeItem(TABS_ROUTES)

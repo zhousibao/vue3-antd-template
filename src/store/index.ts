@@ -7,8 +7,7 @@ export type RootState = {
     user: UserState;
 };
 
-export type Store =
-    & UserStore<Pick<RootState, 'user'>>
+export type Store = UserStore<Pick<RootState, 'user'>>
 
 
 const store = createStore<RootState>({

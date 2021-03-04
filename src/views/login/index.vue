@@ -67,7 +67,7 @@ export default defineComponent({
       state.loading = false
       message.success('登录成功！')
       const toPath = decodeURIComponent((route.query?.redirect || '/') as string)
-      router.replace(toPath).then(_ => {
+      router.replace(toPath).then(() => {
         if (route.name === 'login') {
           router.replace('/')
         }

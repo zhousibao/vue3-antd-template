@@ -44,5 +44,7 @@ module.exports = {
         objectsInObjects: false,
       },
     ],
+    // 允许any
+    "@typescript-eslint/no-explicit-any": 0,
   },
 }

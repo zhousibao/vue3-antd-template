@@ -4,7 +4,6 @@
 //     title: item.querySelector('.icon-name').textContent,
 //         code:  item.querySelector('.icon-code-show').textContent,
 //     }))
-// localStorage.setItem('icons', JSON.stringify(icons))
 
 export default [{ "title": "柱状图", "code": "icon-zhuzhuangtu" }, {
     "title": "烛型图",

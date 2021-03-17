@@ -6,7 +6,6 @@ const UglifyJsPlugin = require('terser-webpack-plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const path = require('path')
 const resolve = dir => path.join(__dirname, dir) // 路径
-const defaultSettings = require('./src/settings')
 const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
@@ -39,7 +38,7 @@ module.exports = {
         config
             .plugin('html')
             .tap(args => {
-                args[0].title = defaultSettings.title
+                args[0].title = 'vue3 antd template'
                 return args
             })
 

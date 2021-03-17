@@ -1768,6 +1768,16 @@
   resolved "https://registry.npmjs.org/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
 
+"@zhousibao/js-localstorage@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@zhousibao/js-localstorage/-/js-localstorage-1.0.0.tgz#9c8bfe8ab9e9f3b319d460a80331bc712b492d85"
+  integrity sha512-fMix5swzs6Ch/MqyX/d5QwpC0x6KwVg9EtAT800n8omB2URec2kNfZUjPzZGN+Cln0w1wmKo+/r9l6cuKEd9fg==
+
+"@zhousibao/localstorage@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.npmjs.org/@zhousibao/localstorage/-/localstorage-1.1.1.tgz#1799f0b20fce3426230704fbc7a224f6ef4ec5f7"
+  integrity sha512-7nyZMjV9aoRZsO3XCBNNoxYaSH2GvmTk+Uve9uvsSqolZuGgL3a3bTrWr6qASOZdT8nfzisNiziK3Gs6wolpDw==
+
 accepts@~1.3.4, accepts@~1.3.5, accepts@~1.3.7:
   version "1.3.7"
   resolved "https://registry.npmjs.org/accepts/-/accepts-1.3.7.tgz#531bc726517a3b2b41f850021c6cc15eaab507cd"

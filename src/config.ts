@@ -1,6 +1,3 @@
-const defaultSettings = require('./settings')
-
-
 // 是否是本地环境
 export const isDev = process.env.NODE_ENV === 'development'
 
@@ -8,4 +5,4 @@ export const isDev = process.env.NODE_ENV === 'development'
 export const envName = process.env.VUE_APP_ENV_NAME
 
 // 系统名称
-export const systemName = defaultSettings.title
+export const systemName = 'vue3 antd template'

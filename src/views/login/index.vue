@@ -39,7 +39,7 @@ import { defineComponent, reactive, toRefs } from 'vue'
 import { message } from 'ant-design-vue'
 import { UserOutlined, LockOutlined } from '@ant-design/icons-vue'
 import { useRoute, useRouter } from "vue-router";
-import { systemName } from '@/utils/config'
+import { systemName } from '@/config'
 
 export default defineComponent({
   name: "login",

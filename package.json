@@ -6,7 +6,8 @@
     "start": "vue-cli-service serve",
     "dev": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build:fat": "vue-cli-service build --mode fat",
+    "build": "vue-cli-service build --mode production",
     "lint": "vue-cli-service lint",
     "deploy": "gh-pages -d dist"
   },

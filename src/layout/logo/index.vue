@@ -7,7 +7,7 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { systemName } from '@/utils/config'
+import { systemName } from '@/config'
 export default defineComponent({
   props: {
     collapsed: {

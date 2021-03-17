@@ -6,12 +6,10 @@ const UglifyJsPlugin = require('terser-webpack-plugin')
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const path = require('path')
 const resolve = dir => path.join(__dirname, dir) // 路径
-const querystring = require('querystring');
 const defaultSettings = require('./src/settings')
 const isDev = process.env.NODE_ENV === 'development'
 
 module.exports = {
-    // publicPath: isDev ? '' : querystring.unescape('<%=request.getContextPath()%>'),
     publicPath: process.env.BASE_URL,
     // filenameHashing: false,
     productionSourceMap: isDev,

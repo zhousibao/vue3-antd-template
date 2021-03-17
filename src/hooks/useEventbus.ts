@@ -1,26 +1,20 @@
-import { onUnmounted } from 'vue'
-import mitt from 'mitt';
-
-const emitter: mitt.Emitter = mitt();
-
-// 自定义触发器
-const customEmit = (eventName) => {
-  emitter.emit(eventName)
-}
-
-// 自定义接收器
-const customOn = (eventName, callback) => {
-  emitter.on(eventName, () => callback())
-}
-    
+import mitt, { Emitter } from 'mitt';
+const emitter: Emitter = mitt();
 
 /**
  * @eventBus
  */
 export const useEventBus = () => {
-  onUnmounted(() => {
-    emitter.all.clear()
-  })
+  // 自定义触发器
+  const customEmit = (eventName: string, ...data: any[]) => {
+    emitter.emit(eventName, ...data)
+  }
+
+  // 自定义接收器
+  const customOn = (eventName: any, callback) => {
+    emitter.on(eventName, () => callback())
+    return () => emitter.off(eventName, callback)
+  } 
 
   return { customEmit, customOn }
 }

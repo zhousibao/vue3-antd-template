@@ -1,9 +1,9 @@
 const webpack = require('webpack')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
-const CompressionPlugin = require("compression-webpack-plugin")
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+// const CompressionPlugin = require("compression-webpack-plugin")
 // 去除console
 const UglifyJsPlugin = require('terser-webpack-plugin')
-const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+// const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const path = require('path')
 const resolve = dir => path.join(__dirname, dir) // 路径
 const isDev = process.env.NODE_ENV === 'development'
@@ -161,8 +161,7 @@ module.exports = {
         port: '8352',
         proxy: {
             '/api': {
-                target: process.env.VUE_APP_API_URL1,
-                // target: 'http://localhost:8888',
+                target: 'http://localhost:8888',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': '',

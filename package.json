@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@zhousibao/localstorage": "^1.1.2",
     "ant-design-vue": "^2.0.1",
     "axios": "^0.21.1",
     "dayjs": "^1.8.35",

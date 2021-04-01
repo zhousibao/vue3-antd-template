@@ -7,6 +7,7 @@ const UglifyJsPlugin = require('terser-webpack-plugin')
 const path = require('path')
 const resolve = dir => path.join(__dirname, dir) // 路径
 const isDev = process.env.NODE_ENV === 'development'
+const setting = require('./src/setting.ts')
 
 module.exports = {
     publicPath: process.env.BASE_URL,
@@ -38,7 +39,7 @@ module.exports = {
         config
             .plugin('html')
             .tap(args => {
-                args[0].title = 'vue3 antd template'
+                args[0].title = setting.systemName
                 return args
             })
 

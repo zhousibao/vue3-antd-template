@@ -1,5 +1,5 @@
 <template>
-  <ALayoutHeader class="layout-header">
+  <a-layout-header class="layout-header">
     <div class="left-options">
       <span @click="() => $emit('update:collapsed', !collapsed)" class="menu-fold">
         <component :is="collapsed ? 'menu-unfold-outlined' : 'menu-fold-outlined'" />
@@ -29,7 +29,7 @@
       <component :is="fullscreenIcon" @click="toggleFullScreen" />
 
       <div>{{ userNname }}</div>
-      <Dropdown>
+      <a-dropdown>
         <a-avatar src="https://gw.alipayobjects.com/zos/antfincdn/XAosXuNZyF/BiazfanxmamNRoxxVxka.png"/>
         <template v-slot:overlay>
           <a-menu>
@@ -38,22 +38,38 @@
             </a-menu-item>
           </a-menu>
         </template>
-      </Dropdown>
+      </a-dropdown>
     </div>
-  </ALayoutHeader>
+  </a-layout-header>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs, createVNode } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import { message, Modal } from 'ant-design-vue'
-import { QuestionCircleOutlined } from '@ant-design/icons-vue'
-import components from "@/layout/header/components";
 import { useStore } from '@/store'
+import {
+  // 菜单
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  // 全屏
+  FullscreenOutlined,
+  FullscreenExitOutlined,
+  // loginout
+  PoweroffOutlined,
+  QuestionCircleOutlined,
+} from '@ant-design/icons-vue';
 
 export default defineComponent({
   name: "PageHeader",
-  components: { ...components },
+  components: {
+    MenuFoldOutlined,
+    MenuUnfoldOutlined,
+    FullscreenOutlined,
+    FullscreenExitOutlined,
+    QuestionCircleOutlined,    
+    PoweroffOutlined,
+  },
   props: {
     collapsed: {
       type: Boolean,
@@ -61,16 +77,14 @@ export default defineComponent({
   },
   setup() {
     const store = useStore()
-
+    const router = useRouter()
+    const route = useRoute()
+    
     const state = reactive({
       userNname: store.getters.userName,
       fullscreenIcon: 'FullscreenOutlined',
     })
-
-    const router = useRouter()
-    const route = useRoute()
-    console.log(route.matched)
-    console.log(router.getRoutes(), 'currentRoute')
+    
 
     // 退出登录
     const logout = () => {

@@ -23,7 +23,6 @@
 
 <script lang="ts">
 import  { defineComponent, ref, computed } from 'vue'
-import { Layout } from 'ant-design-vue'
 import Logo from './logo/index.vue'
 import AsideMenu from './menu/index.vue'
 import PageHeader from './header/index.vue'
@@ -34,15 +33,10 @@ export default defineComponent({
     PageHeader,
     AsideMenu,
     Logo,
-    [Layout.name]: Layout,
-    [Layout.Content.name]: Layout.Content,
-    [Layout.Sider.name]: Layout.Sider,
   },
   setup() {
     const collapsed = ref<boolean>(false)
-
     const asiderWidth = computed(() => collapsed.value ? '70px' : '248px')
-
     return {
       collapsed,
       asiderWidth,

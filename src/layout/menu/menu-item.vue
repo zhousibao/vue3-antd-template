@@ -28,13 +28,10 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { Menu } from 'ant-design-vue'
 
 export default defineComponent({
   name: "menu-item",
   components: {
-    'a-sub-menu': Menu.SubMenu,
-    'a-menu-item': Menu.Item,
   },
   props: {
     menuInfo: {

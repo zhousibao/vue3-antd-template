@@ -4,7 +4,6 @@
     <p v-show="!collapsed" class="title">{{systemName}}</p>
   </div>
 </template>
-
 <script>
 import { defineComponent } from 'vue'
 import { systemName } from '@/config'
